@@ -1,0 +1,23 @@
+{
+  "name": "deckcheck",
+  "version": "0.0.1",
+  "description": "Tool to check for newest TweetDeck changes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeckHack/deckcheck.git"
+  },
+  "author": "Andreas N. <andy@pixelde.su>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DeckHack/deckcheck/issues"
+  },
+  "homepage": "https://github.com/DeckHack/deckcheck#readme",
+  "dependencies": {
+    "nightmare": "^2.10.0"
+  }
+}
