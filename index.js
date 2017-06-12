@@ -1,5 +1,6 @@
 const Nightmare = require('nightmare')
 const nightmare = Nightmare()
+const check = require('./check.js')
 
 nightmare
   .goto('https://tweetdeck.twitter.com')
@@ -15,8 +16,7 @@ nightmare
   })
   .end()
   .then(function (result) {
-    // TODO: actually do something with the data, save it, compare it, all that stuff
-    console.log(result)
+    check(result)
   })
   .catch(function (error) {
     console.log('Something went wrong: ' + error)
