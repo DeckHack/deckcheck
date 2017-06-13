@@ -1,6 +1,9 @@
 const Nightmare = require('nightmare')
+const Ora = require('ora')
 const nightmare = Nightmare()
 const check = require('./check.js')
+
+const spinner = new Ora('Opening TweetDeck and fetching data').start()
 
 nightmare
   .goto('https://tweetdeck.twitter.com')
@@ -16,8 +19,9 @@ nightmare
   })
   .end()
   .then(function (result) {
+    spinner.succeed('Acquired data from TweetDeck')
     check(result)
   })
   .catch(function (error) {
-    console.log('Something went wrong: ' + error)
+    spinner.fail('Something went wrong: ' + error)
   })

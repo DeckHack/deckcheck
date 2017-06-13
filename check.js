@@ -1,11 +1,15 @@
 const fs = require('fs')
-const diff = require('deep-diff').diff;
+const Ora = require('ora')
+const diff = require('deep-diff').diff
 
 const checkFile = function() {
+  var spinner = new Ora('Checking if data already exists').start()
   if (fs.existsSync('./data.json')) {
+    spinner.succeed('Data exists, proceeding to comparing')
     return true
   }
   
+  spinner.warn('No data exists, writing initial data')
   return false
 }
 
@@ -23,13 +27,15 @@ const readFile = function() {
 
 module.exports = function (data) {
   if (checkFile()) {
+    var spinner = new Ora('Reading old data').start()
     const oldData = readFile()
+    spinner.text = 'Comparing old and new data'
     const dataDiff = diff(oldData, data)
 
     if (dataDiff === undefined) {
-      console.log('Nothing has changed')
+      spinner.succeed('Nothing has changed')
     } else {
-      // TODO: do something with the deep-diff output
+      spinner.warn('Changes found!')
       console.log(dataDiff)
     }
   } else {

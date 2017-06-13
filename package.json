@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DeckHack/deckcheck#readme",
   "dependencies": {
     "deep-diff": "^0.3.8",
-    "nightmare": "^2.10.0"
+    "nightmare": "^2.10.0",
+    "ora": "^1.2.0"
   }
 }
