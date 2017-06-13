@@ -13,7 +13,7 @@ nightmare
       buildID: window.TD.buildID,
       assets: window.TD.assetsOverlay,
       config: window.TD.config,
-      decider: window.TD.decider.getAllWithOverlay(),
+      decider: window.TD.decider.getAllWithOverlay(), // this sometimes works and sometimes doesn't
       templates: window.TD.mustaches
     }
   })
