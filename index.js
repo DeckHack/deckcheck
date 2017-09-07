@@ -1,7 +1,7 @@
 const Nightmare = require('nightmare')
 const Ora = require('ora')
 const nightmare = Nightmare()
-const check = require('./check.js')
+const check = require('./lib/check.js')
 
 const spinner = new Ora('Opening TweetDeck and fetching data').start()
 

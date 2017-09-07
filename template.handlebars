@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>DeckCheck - TweetDeck changeset</title>
+  </head>
+  <body>
+    <h1>TweetDeck changes</h1>
+    {{#each diffs}}
+      {{#compare this.kind "N"}}
+        <p>New value found at <code>{{#fullPath this.path}}{{/fullPath}}</code></p>
+        <pre style="color: green">{{this.rhs}}</pre>
+      {{/compare}}
+      {{#compare this.kind "D"}}
+        <p>Value previously found at <code>{{#fullPath this.path}}{{/fullPath}}</code> was deleted</p>
+        <pre style="color: red">{{this.lhs}}</pre>
+      {{/compare}}
+      {{#compare this.kind "E"}}
+        <p>Edited value found at <code>{{#fullPath this.path}}{{/fullPath}}</code></p>
+        <pre>{{#editDiff this.lhs this.rhs}}{{/editDiff}}</pre>
+      {{/compare}}
+    {{/each}}
+  </body>
+</html>
