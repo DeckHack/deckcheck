@@ -1,0 +1,8 @@
+{
+  "discord": {
+    "enabled": true,
+    "url": "webhook_url_here",
+    "username": "DeckCheck",
+    "avatar_url": "avatar_url_here"
+  }
+}

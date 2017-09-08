@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# configuration file
+config.json
+
 # saved data
 data.json
 output.html
