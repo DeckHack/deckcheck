@@ -4,5 +4,8 @@
     "url": "webhook_url_here",
     "username": "DeckCheck",
     "avatar_url": "avatar_url_here"
-  }
+  },
+  "output_path": "./output/",
+  "output_url": "http://example.com/",
+  "data_path": "./"
 }

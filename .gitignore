@@ -62,4 +62,6 @@ config.json
 
 # saved data
 data.json
-output.html
+
+# generated reports
+*.html
