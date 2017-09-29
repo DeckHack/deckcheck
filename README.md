@@ -21,6 +21,9 @@ the most significant values out of the main object we can imagine are the best t
   * `webhook_url`, the URL of the webhook deckcheck will post to
   * `username`, username of the Bot user it will post as
   * `avatar_url`, avatar of the Bot user it will post as
+* `assets` saves a file containing the last timestamp and an array of all (non-emoji) assets
+  * `enabled` to enable or disable saving of the assets file
+  * `path` path where the `assets.json` file should be saved to
 * `output_path`, directory for the generated reports
 * `output_url`, URL the generated reports will be available (publicly)
 * `data_path`, directory path where the data gets written to/read from

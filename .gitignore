@@ -62,6 +62,7 @@ config.json
 
 # saved data
 data.json
+assets.json
 
 # generated reports
 *.html

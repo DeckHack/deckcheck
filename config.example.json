@@ -5,6 +5,10 @@
     "username": "DeckCheck",
     "avatar_url": "avatar_url_here"
   },
+  "assets": {
+    "enabled": true,
+    "path": "./"
+  },
   "output_path": "./output/",
   "output_url": "http://example.com/",
   "data_path": "./"
