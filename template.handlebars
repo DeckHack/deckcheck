@@ -3,22 +3,96 @@
   <head>
     <meta charset="utf-8"/>
     <title>DeckCheck - TweetDeck changeset</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
   </head>
+  <style>
+    .message-header code {
+      background-color: unset;
+      color: #FFF;
+    }
+
+    .message-body pre {
+      background-color: unset;
+      white-space: normal;
+    }
+  </style>
   <body>
-    <h1>TweetDeck changes</h1>
-    {{#each diffs}}
-      {{#compare this.kind "N"}}
-        <p>New value found at <code>{{#fullPath this.path}}{{/fullPath}}</code></p>
-        <pre style="color: green">{{this.rhs}}</pre>
-      {{/compare}}
-      {{#compare this.kind "D"}}
-        <p>Value previously found at <code>{{#fullPath this.path}}{{/fullPath}}</code> was deleted</p>
-        <pre style="color: red">{{this.lhs}}</pre>
-      {{/compare}}
-      {{#compare this.kind "E"}}
-        <p>Edited value found at <code>{{#fullPath this.path}}{{/fullPath}}</code></p>
-        <pre>{{#editDiff this.lhs this.rhs}}{{/editDiff}}</pre>
-      {{/compare}}
-    {{/each}}
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            DeckCheck
+          </h1>
+          <h2 class="subtitle">
+            <i>EVERYONE ONTO THE DECKS, WE'VE LOCATED CHANGES!</i>
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <p>
+          <div class="tags has-addons">
+            <span class="tag">Legend</span>
+            <span class="tag is-success">Added</span>
+            <span class="tag is-info">Edited</span>
+            <span class="tag is-danger">Deleted</span>  
+          </div>
+        </p>
+        {{#each diffs}}
+          {{#compare this.kind "N"}}
+            <article class="message is-success">
+              <div class="message-header">
+                <code>{{#fullPath this.path}}{{/fullPath}}</code>
+              </div>
+              <div class="message-body">
+                <pre style="color: green">{{this.rhs}}</pre>
+              </div>
+            </article>
+          {{/compare}}
+          {{#compare this.kind "D"}}
+            <article class="message is-danger">
+              <div class="message-header">
+                <code>{{#fullPath this.path}}{{/fullPath}}</code>
+              </div>
+              <div class="message-body">
+                <pre style="color: red">{{this.lhs}}</pre>
+              </div>
+            </article>
+          {{/compare}}
+          {{#compare this.kind "E"}}
+            <article class="message is-info">
+              <div class="message-header">
+                <code>{{#fullPath this.path}}{{/fullPath}}</code>
+              </div>
+              <div class="message-body">
+                <pre>{{#editDiff this.lhs this.rhs}}{{/editDiff}}</pre>
+              </div>
+            </article>
+          {{/compare}}
+        {{/each}}
+      </div>
+    </section>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Heads up!
+          </h1>
+          <h2 class="subtitle">
+            A asset dump should be available on <a href="http://assets.deckhack.io/">assets.deckhack.io</a> under the corresponding timestamp!
+          </h2>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>DeckCheck</strong> by <a href="https://github.com/pixeldesu">pixeldesu</a>@<a href="http://github.com/DeckHackers">DeckHackers</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
