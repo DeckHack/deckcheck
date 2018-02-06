@@ -21,6 +21,9 @@ the most significant values out of the main object we can imagine are the best t
   * `webhook_url`, the URL of the webhook deckcheck will post to
   * `username`, username of the Bot user it will post as
   * `avatar_url`, avatar of the Bot user it will post as
+* `twitter` contains a block with values related to posting a tweet over Twitter
+  * `enabled` to enable or disable posts to Twitter
+  * the rest of the values are keys you can get from a Twitter application!
 * `assets` saves a file containing the last timestamp and an array of all (non-emoji) assets
   * `enabled` to enable or disable saving of the assets file
   * `path` path where the `assets.json` file should be saved to

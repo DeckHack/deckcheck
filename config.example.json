@@ -5,6 +5,13 @@
     "username": "DeckCheck",
     "avatar_url": "avatar_url_here"
   },
+  "twitter": {
+    "enabled": false,
+    "consumer_key": "...",
+    "consumer_secret": "...",
+    "access_token": "...",
+    "access_token_secret": "..."
+  },
   "assets": {
     "enabled": true,
     "path": "./"
